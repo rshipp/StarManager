@@ -23,11 +23,11 @@ func (a *App) Initialize(dbDriver string, dbURI string) {
   }
   a.DB = db
 
-  // Migrate the schema
+  // Migrate the schema.
   a.DB.AutoMigrate(&Star{})
 }
 
-func (a *App) indexHandler(w http.ResponseWriter, r *http.Request) {
+func (a *App) handler(w http.ResponseWriter, r *http.Request) {
   // Create a test Star.
   a.DB.Create(&Star{Name: "test"})
 
@@ -47,7 +47,7 @@ func main() {
   a := &App{}
   a.Initialize("sqlite3", "test.db")
 
-  http.HandleFunc("/", a.indexHandler)
+  http.HandleFunc("/", a.handler)
   if err := http.ListenAndServe(":8080", nil); err != nil {
     panic(err)
   }
