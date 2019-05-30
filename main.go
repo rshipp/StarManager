@@ -4,6 +4,7 @@ import (
   "net/http"
   "github.com/jinzhu/gorm"
   _ "github.com/jinzhu/gorm/dialects/sqlite"
+  "github.com/gorilla/mux"
 )
 
 type Star struct {
@@ -47,7 +48,11 @@ func main() {
   a := &App{}
   a.Initialize("sqlite3", "test.db")
 
-  http.HandleFunc("/", a.handler)
+  r := mux.NewRouter()
+
+  r.HandleFunc("/", a.handler)
+
+  http.Handle("/", r)
   if err := http.ListenAndServe(":8080", nil); err != nil {
     panic(err)
   }
