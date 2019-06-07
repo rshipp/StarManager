@@ -11,7 +11,8 @@ import (
 )
 
 type Star struct {
-  Name string `gorm:"primary_key" json:"name"`
+  ID uint `json:"id"`
+  Name string `gorm:"unique" json:"name"`
   Description string `json:"description"`
   URL string `json:"url"`
 }
