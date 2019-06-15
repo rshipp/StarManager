@@ -21,6 +21,9 @@ vendor/
 # Custom (named Linux binaries)
 StarManager
 
+# Custom (temporary; ignore compiled JS files from babel)
+public/js/
+
 # Node.js
 # Logs
 logs
