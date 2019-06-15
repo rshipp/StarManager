@@ -130,6 +130,7 @@ func main() {
 	r.HandleFunc("/stars", a.CreateHandler).Methods("POST")
 	r.HandleFunc("/stars/{name:.+}", a.UpdateHandler).Methods("PUT")
 	r.HandleFunc("/stars/{name:.+}", a.DeleteHandler).Methods("DELETE")
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
 
 	http.Handle("/", r)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
