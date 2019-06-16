@@ -4,9 +4,10 @@
   "description": "Star Manager",
   "main": "index.js",
   "scripts": {
-    "watch": "npx babel --watch src --out-dir public/js/ --presets react-app/prod ",
+    "watch": "npx babel --watch src --out-dir public/js/ --presets @babel/preset-react ",
+    "build": "npx babel src --out-dir public/js/ --presets @babel/preset-react",
     "start": "go run main.go",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "go test"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,12 @@
     "url": "https://github.com/rshipp/StarManager/issues"
   },
   "homepage": "https://github.com/rshipp/StarManager#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-react": "^7.0.0"
+  },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
+    "package.json": "^2.0.1"
   }
 }

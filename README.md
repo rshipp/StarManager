@@ -12,8 +12,8 @@ Install Go and Node.js.
 
 Install JS dependencies: `npm install`.
 
-Compile JSX (run this in the background or a different shell): `npm run watch`.
+Build the app: `npm run build`.
 
-Run app: `npm start`.
+Run: `npm start`.
 
 Open `localhost:8080` in your browser.
