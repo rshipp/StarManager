@@ -1,5 +1,7 @@
 'use strict';
 
+var axe = require('react-axe');
+
 class StarManager extends React.Component {
   constructor(props) {
     super(props);
@@ -55,5 +57,6 @@ class StarManager extends React.Component {
   }
 }
 
+axe(React, ReactDOM, 1000);
 let domContainer = document.querySelector('#StarManager');
 ReactDOM.render(<StarManager />, domContainer);

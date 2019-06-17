@@ -4,8 +4,7 @@
   "description": "Star Manager",
   "main": "index.js",
   "scripts": {
-    "watch": "npx babel --watch src --out-dir public/js/ --presets @babel/preset-react ",
-    "build": "npx babel src --out-dir public/js/ --presets @babel/preset-react",
+    "build": "npx browserify -c 'npx babel --no-babelrc --presets @babel/preset-react' src/*.jsx --outfile public/js/bundle.js",
     "start": "go run main.go",
     "test": "go test"
   },
@@ -22,7 +21,9 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
+    "browserify": "^16.2.3",
+    "react-axe": "^3.1.0"
   },
   "dependencies": {
     "package.json": "^2.0.1"
