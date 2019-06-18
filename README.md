@@ -12,8 +12,6 @@ Install Go and Node.js.
 
 Install JS dependencies: `npm install`.
 
-Build the app: `npm run build`.
+Start the API server: `npm run server`.
 
-Run: `npm start`.
-
-Open `localhost:8080` in your browser.
+Start the React dev server in another tab or shell: `npm start`.
