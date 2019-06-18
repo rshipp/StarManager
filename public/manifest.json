@@ -1,0 +1,8 @@
+{
+  "short_name": "Star Manager",
+  "name": "Star Manager",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
