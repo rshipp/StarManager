@@ -41,6 +41,7 @@ func (a *App) ListHandler(w http.ResponseWriter, r *http.Request) {
 	starsJSON, _ := json.Marshal(stars)
 
 	// Write to HTTP response.
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	w.Write([]byte(starsJSON))
 }
@@ -54,6 +55,7 @@ func (a *App) ViewHandler(w http.ResponseWriter, r *http.Request) {
 	starJSON, _ := json.Marshal(star)
 
 	// Write to HTTP response.
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	w.Write([]byte(starJSON))
 }
